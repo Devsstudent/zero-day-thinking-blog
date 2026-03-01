@@ -1,0 +1,136 @@
+---
+layout: default
+---
+
+<div class="home">
+    <header class="site-header">
+        <h1>{{ site.title | escape }}</h1>
+        <p>{{ site.description | escape }}</p>
+    </header>
+
+    <div class="toolbar">
+        <div class="search-bar">
+            <input type="text" placeholder="Search posts...">
+        </div>
+        <div class="toolbar-actions">
+            <a href="{{ '/feed.xml' | relative_url }}" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline-block;vertical-align:text-bottom">
+                    <path d="M4 11a9 9 0 0 1 9 9"></path>
+                    <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    <circle cx="5" cy="19" r="1"></circle>
+                </svg>
+                RSS Feed
+            </a>
+            <button class="btn"
+                onclick="alert('Subscribe via email functionality coming soon! For now, use the RSS feed.')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline-block;vertical-align:text-bottom">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                Subscribe
+            </button>
+        </div>
+    </div>
+
+    <div class="filters">
+        <a href="#" class="active" data-filter="all">All</a>
+        {%- assign sorted_tags = site.tags | sort -%}
+        {%- for tag in sorted_tags -%}
+        <a href="#" data-filter="{{ tag[0] | downcase }}">{{ tag[0] }}</a>
+        {%- endfor -%}
+    </div>
+
+    {%- if site.posts.size > 0 -%}
+    <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li class="post-item" data-tags="{{ post.tags | join: ' ' | downcase }}" style="cursor: pointer;"
+            onclick="window.location.href='{{ post.url | relative_url }}'">
+            <h2>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h2>
+            <div class="post-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 25 }}
+            </div>
+            <div class="post-meta">
+                {%- if post.author_avatar -%}
+                <img class="post-author-avatar" src="{{ post.author_avatar }}"
+                    alt="{{ post.author | default: site.author.name }}">
+                {%- elsif site.author.avatar -%}
+                <img class="post-author-avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+                {%- endif -%}
+
+                <span class="post-author">
+                    {{ post.author | default: site.author.name }}
+                </span>
+                <span class="separator">&middot;</span>
+                <span class="post-date">
+                    {%- assign m = post.date | date: "%-m" -%}
+                    {{ post.date | date: "%B" }} {{ post.date | date: "%-d" }}
+                    {%- assign suffix = "th" -%}
+                    {%- assign d = post.date | date: "%-d" | plus: 0 -%}
+                    {%- if d == 1 or d == 21 or d == 31 -%}{%- assign suffix = "st" -%}
+                    {%- elsif d == 2 or d == 22 -%}{%- assign suffix = "nd" -%}
+                    {%- elsif d == 3 or d == 23 -%}{%- assign suffix = "rd" -%}
+                    {%- endif -%}
+                    {{ suffix }}
+                </span>
+            </div>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector('.search-bar input');
+        const posts = document.querySelectorAll('.post-list .post-item');
+        const filters = document.querySelectorAll('.filters a');
+        let currentFilter = 'all';
+
+        function filterPosts() {
+            const query = searchInput.value.toLowerCase();
+
+            posts.forEach(post => {
+                const title = post.querySelector('.post-link').innerText.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').innerText.toLowerCase();
+                const tags = post.getAttribute('data-tags') || '';
+
+                const matchesSearch = title.includes(query) || excerpt.includes(query);
+                const matchesFilter = currentFilter === 'all' || tags.includes(currentFilter);
+
+                if (matchesSearch && matchesFilter) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    filterPosts();
+                }
+            });
+        }
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', function (e) {
+                e.preventDefault();
+                filters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+
+                currentFilter = this.getAttribute('data-filter').toLowerCase();
+                filterPosts();
+            });
+        });
+    });
+</script>

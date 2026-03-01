@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <div class="post-meta" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+            {%- if page.author_avatar -%}
+            <img class="post-author-avatar" src="{{ page.author_avatar }}"
+                alt="{{ page.author | default: site.author.name }}"
+                style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+            {%- elsif site.author.avatar -%}
+            <img class="post-author-avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}"
+                style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+            {%- endif -%}
+            <span class="post-author" style="color: var(--text-muted); font-size: 0.95rem;">{{ page.author | default:
+                site.author.name }}</span>
+            <span class="separator" style="color: var(--border-color-light);">&middot;</span>
+            <span class="post-date" style="color: var(--text-muted); font-size: 0.95rem;">{{ page.date | date: "%B %d,
+                %Y" }}</span>
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
