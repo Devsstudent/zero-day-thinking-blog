@@ -22,8 +22,8 @@ title: "Zero-Day Thinking Blog's"
 email: odessein@student.42.fr
 description: >-
   Orson's blog about anything that interests him. Could works at technology watch.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/zero-day-thinking-blog" # GitHub Pages subpath
+url: "https://devsstudent.github.io" # production hostname
 github_username: Devsstudent
 linkedin_username: orson-dessein
 twitter_username: Mach0_0s
