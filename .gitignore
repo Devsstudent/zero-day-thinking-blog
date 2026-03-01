@@ -10,3 +10,6 @@ build.log
 
 # macOS
 .DS_Store
+
+# Agent / local AI rules (keep local only)
+.agent/
