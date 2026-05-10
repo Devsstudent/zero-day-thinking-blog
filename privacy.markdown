@@ -6,7 +6,7 @@ permalink: /privacy/
 
 # Privacy Policy
 
-Welcome to Orson's Blog. This privacy policy explains how we collect and use your data when you visit this website.
+Welcome to Devsstudent's Blog. This privacy policy explains how we collect and use your data when you visit this website.
 
 ## Information We Collect
 Since this is a static blog hosted on GitHub Pages, we do not directly collect any personal data such as names, email addresses, or phone numbers unless you explicitly provide them through a contact form or email.

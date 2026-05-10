@@ -21,15 +21,15 @@
 title: "Zero-Day Thinking Blog's"
 email: odessein@student.42.fr
 description: >-
-  Orson's blog about anything that interests him. Could works at technology watch.
+  Devsstudent's blog about anything that interests him. Could works at technology watch.
 baseurl: "/zero-day-thinking-blog" # GitHub Pages subpath
 url: "https://devsstudent.github.io" # production hostname
 github_username: Devsstudent
-linkedin_username: orson-dessein
+linkedin_username: Devsstudent-dessein
 twitter_username: Mach0_0s
 
 author:
-  name: "Orson"
+  name: "Devsstudent"
   avatar: "https://github.com/Devsstudent.png"
 
 # Build settings
