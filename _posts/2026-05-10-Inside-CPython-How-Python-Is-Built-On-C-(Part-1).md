@@ -16,7 +16,7 @@ That can already feel like a lot if you’ve never heard of bytecode, CPU instru
 
 Here is the simple picture:
 
-![CPython pipeline](/assets/cpython_pipeline.png)
+![CPython pipeline]({{ site.baseurl }}/assets/cpython_pipeline.png)
 
 You can think of Python code as structured text that follows a well‑defined set of rules: keywords like `for`, `while`, `if`, and `else`, along with identifiers, numbers, operators, and so on. Before CPython can do anything useful, it has to break this text into meaningful pieces.
 
@@ -30,9 +30,9 @@ This is a first high‑level look at Python internals. In future parts, we can d
 
 ## Sources
 
-- https://realpython.com/cpython-source-code-guide/  
-- https://manakjiri.cz/pythonoviny/2025/compiler-parser/  
-- https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form  
-- https://github.com/python/cpython/blob/main/Parser/token.c  
-- https://github.com/python/cpython/tree/main/Tools/peg_generator/pegen  
-- https://github.com/daeken/Benjen/blob/master/daeken.com/entries/python-marshal-format.md  
+- <https://realpython.com/cpython-source-code-guide/>
+- <https://manakjiri.cz/pythonoviny/2025/compiler-parser/>
+- <https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form>
+- <https://github.com/python/cpython/blob/main/Parser/token.c>
+- <https://github.com/python/cpython/tree/main/Tools/peg_generator/pegen>
+- <https://github.com/daeken/Benjen/blob/master/daeken.com/entries/python-marshal-format.md>  
