@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Inside CPython: How Python Is Built on C (Part 1)"
-date:   2026-05-10 13:03:31 +0100
+date:   2026-05-09 13:03:31 +0100
 categories: Compilers Python 
 author: "Devsstudent"
 author_avatar: "https://github.com/Devsstudent.png"

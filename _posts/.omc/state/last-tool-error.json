@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"which bundle && bundle --version\",\"description\":\"Check bundle location and version\"}",
+  "error": "Exit code 1\n/opt/homebrew/opt/ruby/bin/bundle\n/opt/homebrew/Cellar/ruby/4.0.3/lib/ruby/4.0.0/rubygems.rb:305:in 'Kernel#load': cannot load such file -- /opt/homebrew/lib/ruby/gems/4.0.0/gems/bundler-4.0.7/exe/bundle (LoadError)\n\tfrom /opt/homebrew/Cellar/ruby/4.0.3/lib/ruby/4.0.0/rubygems.rb:305:in 'Gem.activate_and_load_bin_path'\n\tfrom /opt/homebrew/opt/ruby/bin/bundle:25:in '<main>'",
+  "timestamp": "2026-05-10T11:53:35.444Z",
+  "retry_count": 1
+}
