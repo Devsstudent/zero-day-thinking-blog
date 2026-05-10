@@ -1,4 +1,12 @@
-# Inside CPython: How Python Is Built on C (Part 1)
+---
+layout: post
+title:  "Inside CPython: How Python Is Built on C (Part 1)"
+date:   2026-03-01 13:03:31 +0100
+categories: Compilers Python 
+author: "Devsstudent"
+author_avatar: "https://github.com/Devsstudent.png"
+tags: [engineering]
+---
 
 This article explains what Python looks like under the hood: what happens when you run a Python program, and how the CPython interpreter processes your code.
 
