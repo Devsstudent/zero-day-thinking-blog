@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1778412387039,
+  "projectRoot": "/Users/machos/Personal/zero-day-thinking-blog",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Ruby",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Gemfile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "bundler",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "_layouts": {
+      "path": "_layouts",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1778412387022,
+      "keyFiles": [
+        "default.html",
+        "home.html",
+        "page.html",
+        "post.html"
+      ]
+    },
+    "_posts": {
+      "path": "_posts",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1778412387023,
+      "keyFiles": [
+        "2026-03-01-getting-started.md",
+        "2026-03-01-welcome-to-jekyll.markdown",
+        "2026-05-10-inside-CPython.md"
+      ]
+    },
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 1,
+      "lastAccessed": 1778412387023,
+      "keyFiles": [
+        "main.scss"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "_posts/2026-05-10-inside-CPython.md",
+      "accessCount": 2,
+      "lastAccessed": 1778412573079,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
